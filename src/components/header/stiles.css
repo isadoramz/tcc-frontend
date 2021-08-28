@@ -1,0 +1,67 @@
+header {
+  max-width: 100%;
+  background-color: #d67d5a;
+  padding: 30px 150px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: content-box;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  margin: 0 15px;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: Andale Mono, monospace;
+  color: #fdfed2;
+}
+
+.slogan {
+  margin: 0 15px;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: Andale Mono, monospace;
+  color: #fdfed2;
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.orange-button {
+  border: none;
+}
+
+.yellow-button {
+  border: 1px #fdfed2 solid;
+  border-radius: 20px;
+  color: #fdfed2;
+  background-color: transparent;
+  width: 170px;
+  height: 60px;
+  font-size: 17px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.yellow-button:hover {
+  border: 1px #fcfd9a solid;
+  color: #fcfd9a;
+}
