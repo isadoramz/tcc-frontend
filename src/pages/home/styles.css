@@ -29,9 +29,16 @@
 
 .homeContentContainer {
   padding: 0 250px;
+  height: 100%;
 }
 
 .petsContainer {
   display: flex;
-  justify-content: space-between;
+  height: 100vh;
+  flex-wrap: wrap;
+  column-gap: 7.5rem;
+}
+
+.homeContainer {
+  height: 100vh;
 }

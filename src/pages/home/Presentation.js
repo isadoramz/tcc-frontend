@@ -1,5 +1,7 @@
 import Header from "../../components/header/Header"
-import Card from "../../components/card/Card"
+import PetCard from "../../components/petCard/PetCard"
+import { Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import "./styles.css";
 
@@ -7,10 +9,12 @@ import "./styles.css";
 const Home = ({
     currentTab,
     setCurrentTab,
-    pets
+    pets,
+    toggleModal,
+    openModal
 }) => {
     return(
-        <div>
+        <div className="homeContainer">
 			<Header/>
             <div className="homeButtonsContainer">
                 <button className={currentTab === "pets" ? ("registerButtonSelected") : ("registerButton")} onClick={() => setCurrentTab("pets")}>Pets</button>
@@ -22,7 +26,7 @@ const Home = ({
                         {
                             pets.map((pet, i) => (
                                 <div key={i}>
-                                    <Card pet={pet}/>
+                                    <PetCard pet={pet} toggleModal={toggleModal} openModal={openModal}/>
                                 </div>
                             ))
                         }
@@ -32,8 +36,7 @@ const Home = ({
                         CASOS
                     </div>
                 )}
-             </div>
-            
+							</div>
         </div>
     )
 }

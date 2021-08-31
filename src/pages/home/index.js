@@ -5,6 +5,12 @@ import Presentation from "./Presentation"
 const Home = ({}) => {
     const [currentTab, setCurrentTab] = React.useState("pets");
     const [pets, setPets] = React.useState([]);
+    const [openModal, setOpenModal] = React.useState(false);
+
+    const toggleModal = () => {
+        setOpenModal(!openModal);
+				console.log(openModal)
+    }
 
     useEffect(() => {
       (async () => {
@@ -18,6 +24,8 @@ const Home = ({}) => {
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}
         pets={pets}
+        toggleModal={toggleModal}
+        openModal={openModal}
       />
     )
 }
