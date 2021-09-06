@@ -63,9 +63,27 @@
 .infoTitle {
   color: rgb(70, 70, 70);
   font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.infoText {
+  color: rgb(70, 70, 70);
+  font-size: 16px;
   font-weight: 400;
 }
 
 .modal-backdrop {
   background-color: #00000047 !important;
+}
+
+.wppIcon {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.contactInfoContainer {
+  display: flex;
+  justify-content: space-around;
 }

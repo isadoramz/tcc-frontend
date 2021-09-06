@@ -11,9 +11,7 @@ const Home = ({
     currentTab,
     setCurrentTab,
     pets,
-    cases,
-    toggleModal,
-    openModal
+    cases
 }) => {
     return(
         <div className="homeContainer">
@@ -26,11 +24,13 @@ const Home = ({
                 {currentTab ===  "pets" ? (
                     <div className="petsContainer">
                         {
-                            pets.map((pet, i) => (
-                                <div key={i}>
-                                    <PetCard pet={pet} toggleModal={toggleModal} openModal={openModal}/>
+                            pets.map((p) => {
+                                return (
+                                <div key={p.id}>
+                                    <PetCard pet={p}/>
                                 </div>
-                            ))
+                                )
+                            })
                         }
                     </div>
                 ) : (
@@ -38,7 +38,7 @@ const Home = ({
                         {
                             cases.map((vCase, i) => (
                                 <div key={i}>
-                                    <CaseCard vCase={vCase} toggleModal={toggleModal} openModal={openModal}/>
+                                    <CaseCard vCase={vCase}/>
                                 </div>
                             ))
                         }

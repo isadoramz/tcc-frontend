@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-const PetCard = ({ vCase, openModal, toggleModal }) => {
+const PetCard = ({ vCase}) => {
+	const [openModal, setOpenModal] = React.useState(false);
 
+	const toggleModal = () => {
+			setOpenModal(!openModal);
+	}
     return(
 			<>
 				<div class="card">
