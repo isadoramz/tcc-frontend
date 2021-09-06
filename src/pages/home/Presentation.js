@@ -1,5 +1,6 @@
 import Header from "../../components/header/Header"
 import PetCard from "../../components/petCard/PetCard"
+import CaseCard from "../../components/casesCard/CasesCard"
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
@@ -10,6 +11,7 @@ const Home = ({
     currentTab,
     setCurrentTab,
     pets,
+    cases,
     toggleModal,
     openModal
 }) => {
@@ -32,11 +34,17 @@ const Home = ({
                         }
                     </div>
                 ) : (
-                    <div>
-                        CASOS
+                    <div className="petsContainer">
+                        {
+                            cases.map((vCase, i) => (
+                                <div key={i}>
+                                    <CaseCard vCase={vCase} toggleModal={toggleModal} openModal={openModal}/>
+                                </div>
+                            ))
+                        }
                     </div>
                 )}
-							</div>
+			</div>
         </div>
     )
 }
