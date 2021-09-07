@@ -1,6 +1,6 @@
 import Header from "../../components/header/Header"
 import PetCard from "../../components/petCard/PetCard"
-import CaseCard from "../../components/casesCard/CasesCard"
+import CaseCard from "../../components/caseCard/CaseCard"
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
