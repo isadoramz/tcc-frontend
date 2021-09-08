@@ -1,3 +1,4 @@
+import createPalette from '@material-ui/core/styles/createPalette';
 import request from 'superagent';
 
 const petsService = {
@@ -8,6 +9,15 @@ const petsService = {
     const pets = response.body;
 
     return pets;
-  }
+  },
+
+  async createPet(pet) {
+    const response = await request
+      .post("http://localhost:8080/api/pets", )
+      .send(pet)
+    const createdPet = response.body;
+    
+    return createdPet;
+  },
 }
 export default petsService;

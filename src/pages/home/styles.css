@@ -5,7 +5,7 @@
   margin-top: 60px;
 }
 
-.registerButtonSelected {
+.buttonSelected {
   border: none;
   border-bottom: 3px #d67d5a solid;
   background: transparent;
@@ -16,7 +16,7 @@
   cursor: pointer;
   color: rgb(54, 54, 54);
 }
-.registerButton {
+.buttonUnselected {
   border: none;
   background: transparent;
   margin: 10px;
