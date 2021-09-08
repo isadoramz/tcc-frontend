@@ -18,7 +18,7 @@ const Header = () => {
             </div>
 						<div className="headerButtonsContainer">
 							<button onClick={() => history.push("/petForm")} className="yellow-button">Cadastrar Pet</button>
-							<button className="yellow-button">Cadastrar Caso Voluntariado</button>
+							<button onClick={() => history.push("/caseForm")} className="yellow-button">Cadastrar Caso Voluntariado</button>
 						</div>
         </header>
         </div>

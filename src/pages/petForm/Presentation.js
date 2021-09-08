@@ -6,9 +6,15 @@ import InputMask from "react-input-mask";
 import "./styles.css";
 
 const Presentation = ({
-  formik
+  formik,
+  setImgValue,
+  imgValue
 }) => {
   let history = useHistory();
+
+  useEffect(() => {
+    console.warn(imgValue)
+  }, [imgValue])
 
   return(
       <div className="homeContainer">
@@ -26,7 +32,7 @@ const Presentation = ({
                   name="petsName"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsName}
                   placeholder="Nome do pet"
                 />
                 {formik.errors.petsName && formik.touched.petsName ? (
@@ -38,7 +44,7 @@ const Presentation = ({
                   name="petsAge"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsAge}
                   placeholder="Idade"
                 />
                 {formik.errors.petsAge && formik.touched.petsAge ? (
@@ -50,7 +56,7 @@ const Presentation = ({
                   name="petsBreed"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsBreed}
                   placeholder="Raça"
                 />
                 {formik.errors.petsBreed && formik.touched.petsBreed ? (
@@ -61,7 +67,7 @@ const Presentation = ({
                   id="petsDescription"
                   name="petsDescription"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsDescription}
                   placeholder="Descrição"
                 />
                 {formik.errors.petsDescription && formik.touched.petsDescription ? (
@@ -69,13 +75,15 @@ const Presentation = ({
                 ) : null}
                 <input
                   className="formFile"
-                  type="file" name="petsImg"
+                  type="file"
+                  name="petsImg"
                   id="petsImg"
                   accept="image/png, image/jpeg"
+                  onChange={(e) => setImgValue(URL.createObjectURL(e.target.files[0]))}
                 />
-                {/* {formik.errors.petsImg && formik.touched.petsImg ? (
+                {formik.errors.petsImg && formik.touched.petsImg ? (
                   <div className="errors">{formik.errors.petsImg}</div>
-                ) : null} */}
+                ) : null}
               </div>
               <div className="col-6">
                 <input
@@ -84,7 +92,7 @@ const Presentation = ({
                   name="petsSpeecies"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsSpeecies}
                   placeholder="Espécie"
                 />
                 {formik.errors.petsSpeecies && formik.touched.petsSpeecies ? (
@@ -96,7 +104,7 @@ const Presentation = ({
                   name="petsResponsibleEmail"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsResponsibleEmail}
                   placeholder="E-mail do responsável"
                 />
                  {formik.errors.petsResponsibleEmail && formik.touched.petsResponsibleEmail ? (
@@ -109,7 +117,7 @@ const Presentation = ({
                   name="petsResponsiblePhone"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsResponsiblePhone}
                   placeholder="Telefone do responsável"
                 />
                 {formik.errors.petsResponsiblePhone && formik.touched.petsResponsiblePhone ? (
@@ -122,7 +130,7 @@ const Presentation = ({
                   name="petsResponsibleWhatsApp"
                   type="text"
                   onChange={formik.handleChange}
-                  value={formik.values.firstName}
+                  value={formik.values.petsResponsibleWhatsApp}
                   placeholder="Telefone celular/WhatsApp do responsável"
                 />
                 {formik.errors.petsResponsibleWhatsApp && formik.touched.petsResponsibleWhatsApp ? (

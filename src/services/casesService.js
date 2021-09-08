@@ -1,6 +1,6 @@
 import request from 'superagent';
 
-const petsService = {
+const casesService = {
 
   async findAll() {
     const response = await request
@@ -8,6 +8,15 @@ const petsService = {
     const pets = response.body;
 
     return pets;
-  }
+  },
+
+  async createCase(vCase) {
+    const response = await request
+      .post("http://localhost:8080/api/cases", )
+      .send(vCase)
+    const createdVCase = response.body;
+    
+    return createdVCase;
+  },
 }
-export default petsService;
+export default casesService;

@@ -20,7 +20,7 @@ const Home = ({
             </div>
             <div className="homeContentContainer">
                 {currentTab ===  "pets" ? (
-                    <div className="petsContainer">
+                    <div className="listContainer">
                         {
                             pets.map((p) => {
                                 return (
@@ -32,7 +32,7 @@ const Home = ({
                         }
                     </div>
                 ) : (
-                    <div className="petsContainer">
+                    <div className="listContainer">
                         {
                             cases.map((vCase, i) => (
                                 <div key={i}>

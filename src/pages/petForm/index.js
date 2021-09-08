@@ -6,6 +6,7 @@ import petValidationSchema from "../../validations/petFormValidation";
 import { useFormik } from 'formik';
 
 const PetForm = () => {
+  const [imgValue, setImgValue] = React.useState();
 
   const formik = useFormik({
     initialValues: {
@@ -17,7 +18,6 @@ const PetForm = () => {
       petsResponsibleEmail: "",
       petsResponsiblePhone: "",
       petsResponsibleWhatsApp: "",
-      petsImg: [],
     },
     validationSchema: petValidationSchema,
     onSubmit: values => {
@@ -32,7 +32,7 @@ const PetForm = () => {
           phoneNumber:  values.petsResponsiblePhone,
           whatsapp: values.petsResponsibleWhatsApp,
         },
-        img: values.petsImg
+        img: imgValue
       }
       console.log(pet)
       petsService.createPet(pet)
@@ -47,6 +47,8 @@ const PetForm = () => {
     return(
       <Presentation
         formik={formik}
+        imgValue={imgValue}
+        setImgValue={setImgValue}
       />
     )
 }
