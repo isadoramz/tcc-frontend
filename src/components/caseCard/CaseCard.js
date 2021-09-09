@@ -13,14 +13,14 @@ const CaseCard = ({vCase}) => {
 	}
     return(
 			<>
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">{vCase.title}</h5>
+				<div className="card">
+					<div className="card-body">
+						<h5 className="card-title">{vCase.title}</h5>
 					</div>
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item"><FontAwesomeIcon className="icon" icon={faLocationArrow} />{vCase.local}</li>
-						<li class="list-group-item"><FontAwesomeIcon className="icon" icon={faClock} />{vCase.hourAvailability}</li>
-						<li class="list-group-item"><FontAwesomeIcon className="icon" icon={faCalendarAlt} />{vCase.weekDays.map((weekDay) => {
+					<ul className="list-group list-group-flush">
+						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faLocationArrow} />{vCase.local}</li>
+						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faClock} />{vCase.hourAvailability}</li>
+						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faCalendarAlt} />{vCase.weekDays.map((weekDay) => {
 							if((vCase.weekDays.length - 1) === vCase.weekDays.indexOf(weekDay)) {
 								return ` ${weekDay}`
 							} else {
@@ -28,7 +28,7 @@ const CaseCard = ({vCase}) => {
 							}
 						})}</li>
 					</ul>
-					<div class="card-body">						
+					<div className="card-body">						
 						<button onClick={toggleModal} className="moreInformationButton">+ informações</button>
 					</div>
 				</div>

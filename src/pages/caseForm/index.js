@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Presentation from "./Presentation"
 import casesService from "../../services/casesService";
-// import petValidationSchema from "../../validations/petFormValidation";
+import caseValidationSchema from "../../validations/caseFormValidation";
 
 import { useFormik } from 'formik';
 
@@ -11,7 +11,6 @@ const CaseForm = () => {
     initialValues: {
       local: "",
       adress: "",
-      weekDays: [],
       hourAvailability: "",
       title: "",
       description: "",
@@ -19,12 +18,11 @@ const CaseForm = () => {
       phoneNumber: "",
       whatsapp: ""
     },
-    // validationSchema: petValidationSchema,
+    validationSchema: caseValidationSchema,
     onSubmit: values => {
       const vCase = {
         local: values.local,
         adress: values.adress,
-        weekDays: values.weekDays,
         hourAvailability: values.hourAvailability,
         title: values.title,
         description: values.description,
@@ -34,6 +32,7 @@ const CaseForm = () => {
           whatsapp: values.whatsapp,
         }
       }
+      console.log(vCase)
       casesService.createCase(vCase)
     },
   });

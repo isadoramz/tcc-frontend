@@ -19,9 +19,6 @@ const phoneRegExp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/
   petsResponsibleEmail: Yup.string().email('Insira um e-mail válido').required('Campo obrigatório'),
   petsResponsiblePhone: Yup.string().matches(phoneRegExp, 'Insira um número de telefone válido'),
   petsResponsibleWhatsApp: Yup.string().matches(phoneRegExp, 'Insira um número de telefone válido'),
-  // petsImg: Yup.object().shape({
-  //   file: Yup.mixed().required('File is required'),
-  // })
 })
 
 

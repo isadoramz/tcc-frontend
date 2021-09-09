@@ -20,6 +20,18 @@ const Presentation = ({
           <form  className="form" onSubmit={formik.handleSubmit}>
             <div className="row">
               <div className="col-6">
+              <input
+                  className="formInput"
+                  id="title"
+                  name="title"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.title}
+                  placeholder="Título do caso voluntário"
+                />
+                {formik.errors.title && formik.touched.title ? (
+                  <div className="errors">{formik.errors.title}</div>
+                ) : null}
                 <input
                   className="formInput"
                   id="local"
@@ -29,6 +41,21 @@ const Presentation = ({
                   value={formik.values.local}
                   placeholder="Local"
                 />
+                {formik.errors.local && formik.touched.local ? (
+                  <div className="errors">{formik.errors.local}</div>
+                ) : null}
+                <input
+                  className="formInput"
+                  id="adress"
+                  name="adress"
+                  type="text"
+                  onChange={formik.handleChange}
+                  value={formik.values.adress}
+                  placeholder="Endereço"
+                />
+                {formik.errors.adress && formik.touched.adress ? (
+                  <div className="errors">{formik.errors.adress}</div>
+                ) : null}
                 <input
                   className="formInput"
                   id="hourAvailability"
@@ -38,6 +65,9 @@ const Presentation = ({
                   value={formik.values.hourAvailability}
                   placeholder="Disponibilidade de horário"
                 />
+                {formik.errors.hourAvailability && formik.touched.hourAvailability ? (
+                  <div className="errors">{formik.errors.hourAvailability}</div>
+                ) : null}
                 <textarea
                   className="formInput"
                   id="description"
@@ -46,6 +76,9 @@ const Presentation = ({
                   value={formik.values.description}
                   placeholder="Descrição"
                 />
+                {formik.errors.description && formik.touched.description ? (
+                  <div className="errors">{formik.errors.description}</div>
+                ) : null}
               </div>
               <div className="col-6">
                 <input
@@ -57,6 +90,9 @@ const Presentation = ({
                   value={formik.values.email}
                   placeholder="E-mail do responsável"
                 />
+                {formik.errors.email && formik.touched.email ? (
+                  <div className="errors">{formik.errors.email}</div>
+                ) : null}
                 <InputMask
                   mask="(99)9999-9999"
                   className="formInput"
@@ -67,6 +103,9 @@ const Presentation = ({
                   value={formik.values.phoneNumber}
                   placeholder="Telefone do responsável"
                 />
+                {formik.errors.phoneNumber && formik.touched.phoneNumber ? (
+                  <div className="errors">{formik.errors.phoneNumber}</div>
+                ) : null}
                 <InputMask
                   mask="(99)99999-9999"
                   className="formInput"
@@ -77,6 +116,9 @@ const Presentation = ({
                   value={formik.values.whatsapp}
                   placeholder="Telefone celular/WhatsApp do responsável"
                 />
+                {formik.errors.whatsapp && formik.touched.whatsapp ? (
+                  <div className="errors">{formik.errors.whatsapp}</div>
+                ) : null}
               </div>
             </div>
             <div className="saveButtonContainer">
