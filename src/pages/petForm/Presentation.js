@@ -12,10 +12,6 @@ const Presentation = ({
 }) => {
   let history = useHistory();
 
-  useEffect(() => {
-    console.warn(imgValue)
-  }, [imgValue])
-
   return(
       <div className="homeContainer">
         <Header />
@@ -79,7 +75,7 @@ const Presentation = ({
                   name="petsImg"
                   id="petsImg"
                   accept="image/png, image/jpeg"
-                  onChange={(e) => setImgValue(URL.createObjectURL(e.target.files[0]))}
+                  onChange={(e) => setImgValue(e.target.files[0])}
                 />
                 {formik.errors.petsImg && formik.touched.petsImg ? (
                   <div className="errors">{formik.errors.petsImg}</div>

@@ -34,15 +34,9 @@ const CaseForm = () => {
           whatsapp: values.whatsapp,
         }
       }
-      console.log(vCase)
       casesService.createCase(vCase)
     },
   });
-
-  useEffect(() => {
-    console.log(formik.initialValues.petsImg)
-  }, [formik.initialValues.petsImg])
-
     
     return(
       <Presentation

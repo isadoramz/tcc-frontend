@@ -20,7 +20,8 @@ const PetForm = () => {
       petsResponsibleWhatsApp: "",
     },
     validationSchema: petValidationSchema,
-    onSubmit: values => {
+    onSubmit: async values => {
+      const petImg = await toBase64(imgValue)
       const pet = {
         name: values.petsName,
         breed: values.petsBreed,
@@ -32,16 +33,18 @@ const PetForm = () => {
           phoneNumber:  values.petsResponsiblePhone,
           whatsapp: values.petsResponsibleWhatsApp,
         },
-        img: imgValue
+        img: petImg
       }
-      console.log(pet)
       petsService.createPet(pet)
     },
   });
 
-  useEffect(() => {
-    console.log(formik.initialValues.petsImg)
-  }, [formik.initialValues.petsImg])
+  const toBase64 = (file) => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+  });
 
     
     return(

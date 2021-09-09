@@ -4,7 +4,6 @@ import wppIcon from "../../assets/wpp.png"
 import "./styles.css";
 
 const CaseModal = ({openModal, toggleModal, vCase}) => {
-  console.log(vCase)
   return (
     <Modal
 					show={openModal}

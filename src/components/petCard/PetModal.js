@@ -3,7 +3,6 @@ import { Modal } from 'react-bootstrap';
 import wppIcon from "../../assets/wpp.png"
 
 const PetModal = ({openModal, toggleModal, pet}) => {
-  console.log(pet.responsible.whatsapp)
   return (
     <Modal
 					show={openModal}
