@@ -32,7 +32,6 @@ const CaseForm = () => {
           whatsapp: values.whatsapp,
         }
       }
-      console.log(vCase)
       casesService.createCase(vCase)
     },
   });
