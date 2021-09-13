@@ -22,18 +22,9 @@ const CaseModal = ({openModal, toggleModal, vCase}) => {
 							<div className="petInformationModalContainer">
 								<div className="petInformationModal">
 									<p className="infoTitle">Local</p>
-									<p className="infoText">{vCase.local}</p>
-									<p className="infoTitle">Dias da semana</p>
-									<p className="infoText">{vCase.weekDays.map((weekDay) => {
-										if((vCase.weekDays.length - 1) === vCase.weekDays.indexOf(weekDay)) {
-											return ` ${weekDay}`
-										} else {
-											return ` ${weekDay},`
-										}
-										})}
-									</p>
+									<p className="infoText">{vCase.local  || "Não disponível"}</p>
 									<p className="infoTitle">Disponibilidade de horário</p>
-									<p className="infoText">{vCase.hourAvailability}</p>
+									<p className="infoText">{vCase.hourAvailability  || "Não disponível"}</p>
 								</div>
 							</div>
 							<div>
@@ -45,7 +36,7 @@ const CaseModal = ({openModal, toggleModal, vCase}) => {
 									</div>
 									<div>
 										<p className="infoTitle">Telefone</p>
-										<p className="infoText">{vCase.responsible.phoneNumber}</p>
+										<p className="infoText">{vCase.responsible.phoneNumber || "Não disponível"}</p>
 									</div>
 									<a href={`https://wa.me/55${vCase.responsible.whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
 								</div>

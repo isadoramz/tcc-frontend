@@ -36,7 +36,7 @@ const PetModal = ({openModal, toggleModal, pet}) => {
                 </div>
                 <div>
                   <p className="infoTitle">Telefone</p>
-                  <p className="infoText">{pet.responsible.phoneNumber}</p>
+                  <p className="infoText">{pet.responsible.phoneNumber  || "Não disponível"}</p>
                 </div>
                 <a href={`https://wa.me/55${pet.responsible.whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
               </div>

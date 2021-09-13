@@ -20,13 +20,6 @@ const CaseCard = ({vCase}) => {
 					<ul className="list-group list-group-flush">
 						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faLocationArrow} />{vCase.local}</li>
 						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faClock} />{vCase.hourAvailability}</li>
-						<li className="list-group-item"><FontAwesomeIcon className="icon" icon={faCalendarAlt} />{vCase.weekDays.map((weekDay) => {
-							if((vCase.weekDays.length - 1) === vCase.weekDays.indexOf(weekDay)) {
-								return ` ${weekDay}`
-							} else {
-								return ` ${weekDay},`
-							}
-						})}</li>
 					</ul>
 					<div className="card-body">						
 						<button onClick={toggleModal} className="moreInformationButton">+ informações</button>
