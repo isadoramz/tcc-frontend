@@ -23,6 +23,8 @@ const CaseModal = ({openModal, toggleModal, vCase}) => {
 								<div className="petInformationModal">
 									<p className="infoTitle">Local</p>
 									<p className="infoText">{vCase.local  || "Não disponível"}</p>
+									<p className="infoTitle">Local</p>
+									<p className="infoText">{vCase.adress  || "Não disponível"}</p>
 									<p className="infoTitle">Disponibilidade de horário</p>
 									<p className="infoText">{vCase.hourAvailability  || "Não disponível"}</p>
 								</div>
