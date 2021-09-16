@@ -3,6 +3,8 @@ import { Modal } from 'react-bootstrap';
 import wppIcon from "../../assets/wpp.png"
 
 const PetModal = ({openModal, toggleModal, pet}) => {
+
+	const whatsapp = pet.responsible.whatsapp.replace(/ *\(*\)*\-*/g, "");
   return (
     <Modal
 					show={openModal}
@@ -39,7 +41,7 @@ const PetModal = ({openModal, toggleModal, pet}) => {
                   <p className="infoText">{pet.responsible.phoneNumber  || "Não disponível"}</p>
                 </div>
 								{pet.responsible.whatsapp ? (
-									<a href={`https://wa.me/55${pet.responsible.whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
+									<a href={`https://wa.me/55${whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
 								) : (
 									null
 								)}

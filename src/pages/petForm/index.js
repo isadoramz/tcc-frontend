@@ -36,6 +36,8 @@ const PetForm = () => {
         img: petImg
       }
       petsService.createPet(pet)
+      alert("Pet cadastrado!")
+
     },
   });
 

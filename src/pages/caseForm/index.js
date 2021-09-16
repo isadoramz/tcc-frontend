@@ -33,6 +33,7 @@ const CaseForm = () => {
         }
       }
       casesService.createCase(vCase)
+      return alert("Caso cadastrado!");
     },
   });
     
