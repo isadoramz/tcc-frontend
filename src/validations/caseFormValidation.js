@@ -12,7 +12,7 @@ const phoneRegExp = /^\([1-9]{2}\)(?:[2-8]|9[1-9])[0-9]{3}\-[0-9]{4}$/
   title: Yup.string()
     .required('Campo obrigatório'),
   description: Yup.string()
-    .max(200, 'Limite de 200 caracteres atingido')
+    .max(400, 'Limite de 200 caracteres atingido')
     .required('Campo obrigatório'),
   email: Yup.string().email('Insira um e-mail válido').required('Campo obrigatório'),
   phoneNumber: Yup.string().matches(phoneRegExp, 'Insira um número de telefone válido'),
