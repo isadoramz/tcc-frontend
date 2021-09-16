@@ -26,7 +26,22 @@
 }
 
 .formFile {
+  display: none;
+}
+
+.formFileLabel {
   margin-top: 50px;
+  cursor: pointer;
+  border: 1px gray solid;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.fileName {
+  margin-top: 10px;
+  font-size: 14px;
+  padding-left: 5px;
 }
 
 .orangeButton {

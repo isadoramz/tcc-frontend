@@ -38,8 +38,12 @@ const PetModal = ({openModal, toggleModal, pet}) => {
                   <p className="infoTitle">Telefone</p>
                   <p className="infoText">{pet.responsible.phoneNumber  || "Não disponível"}</p>
                 </div>
-                <a href={`https://wa.me/55${pet.responsible.whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
-              </div>
+								{pet.responsible.whatsapp ? (
+									<a href={`https://wa.me/55${pet.responsible.whatsapp}/`} target="_blank"><img className="wppIcon" src={wppIcon}/></a>
+								) : (
+									null
+								)}
+                </div>
 					</Modal.Body>
 					<Modal.Footer>
 						<button className="modalCloseButton" onClick={toggleModal}>Fechar</button>

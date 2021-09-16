@@ -69,6 +69,8 @@ const Presentation = ({
                 {formik.errors.petsDescription && formik.touched.petsDescription ? (
                   <div className="errors">{formik.errors.petsDescription}</div>
                 ) : null}
+                <label className="formFileLabel" for="petsImg">Escolha uma foto do pet</label>
+                <p className="fileName">{imgValue?.name}</p>
                 <input
                   className="formFile"
                   type="file"
